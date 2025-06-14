@@ -1,0 +1,77 @@
+--- Project Structure ---
+
+AntivirusExpiryTracker/
+├── settings.gradle
+├── build.gradle
+├── README.md
+└── app/
+    ├── build.gradle
+    ├── src/
+        └── main/
+            ├── AndroidManifest.xml
+            ├── java/com/unique/antivirustracker/
+            │   ├── MainActivity.kt
+            │   ├── AddEntryActivity.kt
+            │   ├── ExpiryListActivity.kt
+            │   ├── SearchFilterActivity.kt
+            │   ├── ScannerActivity.kt
+            │   ├── BackupManager.kt
+            │   └── model/Customer.kt
+            └── res/
+                ├── layout/
+                │   ├── activity_main.xml
+                │   ├── activity_add_entry.xml
+                │   ├── activity_expiry_list.xml
+                │   ├── activity_search_filter.xml
+                │   └── item_customer.xml
+                ├── values/
+                │   ├── colors.xml
+                │   ├── strings.xml
+                │   └── styles.xml
+
+
+--- settings.gradle ---
+rootProject.name = "AntivirusExpiryTracker"
+include ':app'
+
+
+--- build.gradle (Project-level) ---
+buildscript {
+    dependencies {
+        classpath 'com.google.gms:google-services:4.4.0'
+    }
+}
+allprojects {
+    repositories {
+        google()
+        mavenCentral()
+    }
+}
+
+
+--- README.md ---
+# Antivirus Expiry Tracker
+
+A lightweight Android app to track antivirus software expiry with QR scanning, contact calling, reminders, and cloud backup.
+
+## Features
+
+- Customer details (Name, Phone, Product Key)
+- Duration + Auto Expiry Calculation
+- Near expiry highlighting (in red)
+- QR/Barcode scanning for product key
+- Call icon for quick contact
+- Cloud backup via Firebase
+- Search & Filter functions
+
+## Tech Stack
+
+- Kotlin
+- Android Studio
+- Firebase
+- ZXing
+
+## Author
+
+Made by Unique Enterprises
+
